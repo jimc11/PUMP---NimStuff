@@ -15,8 +15,42 @@ public class NimList {
         this.nimValues.add(newVal);
     }
 
-    public int MEX(){
-
+    //Uses boolean list to calculate the MEX value of a hand
+    //Assuming that the list of nim values is ordered from least to greatest ex.[0,1,2,4]
+    public int MEX(ArrayList<Integer> nValues)
+    {
+     	int mexValue=0;
+     	
+     	//get the length equal to the last nim value in an array
+     	//(should be the largest nim value)
+    	int size = nValues.get(nValues.size()-1);
+    	
+    	//create an ArrayList of booleans 
+    	ArrayList<Boolean> booleans = new ArrayList<Boolean>(size);
+    	
+    	
+    	for (int i = 0; i < size-1; i++)
+    	{
+    		if (nValues.contains(i))
+    		{
+    			booleans.set(i, true);
+    		}
+    		else
+    		{
+    			booleans.set(i, false);
+    		}
+    	}
+    	
+        //Go through boolean list to find first false
+    	for (int j = 0; j <size-1; j++)
+    	{
+    		if (booleans.get(j)==false)
+    		{
+    			mexValue = j;
+    			break;
+    		}
+    	}
+    	return mexValue;
     }
 
     public static int nimSum(int [] arr){
