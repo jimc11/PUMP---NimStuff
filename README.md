@@ -1,0 +1,1 @@
+This was an undergraduate mathematical research project that I did with Dr. Tim Hsu of SJSU.  This repo won't make sense to anyone who hasn't studied Combinatorial game theory.  In fact, it probably won't make sense to many of the people who have studied it, either.
